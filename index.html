@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The SOMS®</title>
+    <title>ABOUT The SOMS®</title>
     <style>
         /* Toàn trang */
         * {
@@ -16,21 +16,7 @@
             height: 100vh;
             overflow: hidden;
         }
-
-        /* Video nền */
-        #background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            
-            filter: brightness(50%); /* Giảm độ sáng xuống 50% */
-        }
-
-        /* Thanh menu */
+         /* Thanh menu */
         nav {
             position: fixed;
             top: 0;
@@ -71,8 +57,19 @@
             font-weight: bold;
             color: white;
         }
-
-        /* Phần nội dung */
+        /* Video nền */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            
+            filter: brightness(50%); /* Giảm độ sáng xuống 50% */
+        }
+         /* Phần nội dung */
         .container {
             position: absolute;
             top: 50%;
@@ -91,85 +88,61 @@
             font-size: 30px;
             margin-bottom: 30px;
         }
-        .container button {
-            padding: 20px 30px;
-            font-size: 30px;
-            background-color: #d5783b;
-            color: rgb(0, 0, 0);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-             padding: 10px 20px;
-        }
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.container button {
-    animation: blink 2s infinite; /* Đặt hiệu ứng nhấp nháy */
-}
-
-.container button:active {
-    background-color: #cc5200; /* Thay đổi màu khi nhấn */
-}
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.2s ease;
-        }
-        .container button:hover {
-            background-color: #e66a1e;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            nav .logo {
-                font-size: 20px;
-            }
-            nav .menu-toggle {
-                display: block;
-                cursor: pointer;
-                font-size: 24px;
-                color: white;
-            }
-            nav.active ul {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                background-color: rgba(0, 0, 0, 0.9);
-                width: 200px;
-                padding: 10px;
-                border-radius: 5px;
-            }
-            nav.active ul li {
-                text-align: center;
-                margin: 10px 0;
-            }
-        }
         .rectangle {
     background-color: rgba(0, 0, 0, 0.7); /* Màu nền đen với độ trong suốt */
     padding: 70px;
-    width: 1000px;
-    height: 400px;
+    width: 800px;
+    height: 500px;
     text-align: center;
     border-radius: 8px;
-}
-    </style>
-</head>
+    margin-left: 500px;
+    margin-top: 100px;
+}   
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+  }
+  .slider-container {
+    width: 500px;
+    height: 500px;
+    margin-left: 90px;
+    margin-top: 280px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  .slider-track {
+    display: flex;
+    width: calc(400px * 4); /* 4 ảnh, mỗi ảnh 400px rộng */
+    height: 500px;
+    animation: slide 16s linear infinite;
+  }
+  .slide {
+    flex: 0 0 400px; /* mỗi ảnh rộng 400px */
+    height: 500px;
+    position: relative;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-400px); }
+    50% { transform: translateX(-800px); }
+    75% { transform: translateX(-1200px); }
+    100% { transform: translateX(0); }
+  }
+
+
+        </style>
+        </head>
 <body>
 
     <!-- Video nền -->
@@ -189,23 +162,34 @@
         </ul>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
-
-    <!-- Nội dung chính -->
-    
-     <div class="container">
-        <div class="rectangle">
-             <h1>Trash2Trend®</h1>
-        <p><b>ᴱˣᴾᴸᴼᴿᴵᴺᴳ ᵀᴴᴱ ᵂᴼᴿᴸᴰ ᴼᶠ ᶠᴬˢᵀ ᶠᴬˢᴴᴵᴼᴺ ᴬᴺᴰ ˢᵁˢᵀᴬᴵᴺᴬᴮᴵᴸᴵᵀᵞ</b></p>
-        <button onclick="window.location.href='https://jasonphu16098.github.io/abouttrash2trend/'">ᑕᒪIᑕᛕ ᖴᗝᖇ ᗰᗝᖇᗴ</button>
-        </div>
-    </div>
-
     <script>
-        function toggleMenu() {
+
+function toggleMenu() {
             const nav = document.querySelector('nav');
             nav.classList.toggle('active');
         }
     </script>
+     <!-- Video nền -->
+    <video id="background-video" autoplay loop muted>
+        <source src="china1.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video nền.
+    </video>
+     <div class="container">
+        <div class="rectangle">
+             <h1>Trash2Trend®</h1>
+        <p style="text-align: justify;"><b>Trash2Trend</b> gives new life to unwanted fashion through sustainable solutions. We run influencer-led donation campaigns and offer convenient clothing collection via mobile drop-off points and on-demand home pickups, making it easy to turn old clothes into fresh impact.</p>
+
+        </div>
+    </div>
+  
+<div class="slider-container">
+  <div class="slider-track">
+    <div class="slide"><img src="img1.jpg" alt="Image 1" /></div>
+    <div class="slide"><img src="img2.jpg" alt="Image 2" /></div>
+    <div class="slide"><img src="img3.jpg" alt="Image 3" /></div>
+    <div class="slide"><img src="img4.jpg" alt="Image 4" /></div>
+  </div>
+</div>
 
 </body>
 </html>
